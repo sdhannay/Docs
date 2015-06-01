@@ -38,11 +38,11 @@ Alternatively, you can also unmount the disk manually, by typing the following i
 
 To write the image to the SD card, the command syntax is:
 
-`dd if=[source] of=[destination]`
+`dd bs=1m if=[source] of=[destination]`
 
 so a real example of the command is:
 
-`dd if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/disk2`
+`dd bs=1m if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/disk2`
 
 if you get the following message (very likely):
 
