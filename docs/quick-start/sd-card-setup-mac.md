@@ -36,21 +36,23 @@ Alternatively, you can also unmount the disk manually, by typing the following i
 
 > [WARNING] **Double-check your card's drive letter!** Choosing the wrong drive will likely result in data loss or even worse harm to your computer.
 
+When writing to the SD card, add a 'r' to the front of the drive name, e.g. /dev/disk2 becomes dev/rdisk2.
+
 To write the image to the SD card, the command syntax is:
 
-`dd if=[source] of=[destination]`
+`dd bs=1m if=[source] of=[destination]`
 
 so a real example of the command is:
 
-`dd if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/disk2`
+`dd bs=1m if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/rdisk2`
 
 if you get the following message (very likely):
 
-`dd: /dev/disk2: Permission denied`
+`dd: /dev/rdisk2: Permission denied`
 
 just add *sudo* in front of the command, which will prompt for your password.
  
-`sudo dd if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/disk2`
+`sudo dd bs=1m if=/Users/antonypa/Desktop/RuneAudio_rpi_0.3-beta_20141029_2GB.img of=/dev/rdisk2`
 
 After launching the command you should wait for the flashing process to complete. It can take several minutes, and you'll know that it has completed when the prompt comes back with no errors.
 
